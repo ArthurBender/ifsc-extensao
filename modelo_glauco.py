@@ -90,9 +90,13 @@ def classifica(y, offset):
 
     return yb
 
+# Criação do array com as informações da planilha
 data= pd.read_csv('exames2019Total.csv')
+
+# Filtro de idade
 df_final = data.loc[(data.Idade > 19) & (data.Idade < 100)].copy(True)
 
+# Divide informações da planilha em treino e teste
 df_train, df_test = train_test_split(df_final, test_size=0.3)
 
 parameters = [
@@ -151,6 +155,7 @@ idb = 6.5
 
 
 #individuos saudaveis, com prediabetes e diabetes
+# X = Lista de valores dos parametros, Y = Lista de valores do alvo
 X_train = df_train[parameters].values
 y_train = df_train[target].values
 
@@ -166,9 +171,9 @@ scaler = StandardScaler()
 #scaler = QuantileTransformer()
 #scaler = Normalizer()
 
+# Converte valores para Standard ????????
 X_train_scl = scaler.fit_transform(X_train)
 X_test_scl = scaler.fit_transform(X_test)
-
 
 #########################################################################################
 #Modelo ANN
@@ -181,19 +186,20 @@ from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 
+# TREINO EM SI
 rg_ann = MLPRegressor(hidden_layer_sizes=[20,50], solver='adam', learning_rate='adaptive', activation='relu'
                       , batch_size='auto', max_iter=150, verbose=True, tol=0.00001
                       , alpha=0.1, random_state=10)
-
 model_rg_ann = rg_ann.fit(X_train_scl, y_train)
 
+# PREDIÇÃO
 y_test_pred_rg_ann = model_rg_ann.predict(X_test_scl)
 
 print("RMSE: ", mean_squared_error(y_test, y_test_pred_rg_ann, squared=False))
 print("MSE: ", mean_squared_error(y_test, y_test_pred_rg_ann, squared=True))
 print("MAE: ", mean_absolute_error(y_test, y_test_pred_rg_ann))
 
-
+# Apenas acuracia abaixo
 from sklearn.metrics import accuracy_score
 
 pred_offset = 0

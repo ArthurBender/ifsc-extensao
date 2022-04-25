@@ -166,13 +166,9 @@ y_test = df_test[target].values
 
 #normalizacao das entradas
 from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import QuantileTransformer
-from sklearn.preprocessing import Normalizer
 scaler = StandardScaler()
-#scaler = QuantileTransformer()
-#scaler = Normalizer()
 
-# Converte valores para Standard ????????
+# Converte valores para Standard
 X_train_scl = scaler.fit_transform(X_train)
 X_test_scl = scaler.fit_transform(X_test)
 
@@ -188,14 +184,12 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 
 # TREINO EM SI
-# rg_ann = MLPRegressor(hidden_layer_sizes=[20,50], solver='adam', learning_rate='adaptive', activation='relu'
-#                      , batch_size='auto', max_iter=150, verbose=True, tol=0.00001
-#                      , alpha=0.1, random_state=10)
-# model_rg_ann = rg_ann.fit(X_train_scl, y_train)
+rg_ann = MLPRegressor(hidden_layer_sizes=[20,50], solver='adam', learning_rate='adaptive', activation='relu'
+                      , batch_size='auto', max_iter=150, verbose=True, tol=0.00001
+                      , alpha=0.1, random_state=10)
+model_rg_ann = rg_ann.fit(X_train_scl, y_train)
 
-# pickle.dump(model_rg_ann, open("modelo_treinado.sav", 'wb'))
-
-model_rg_ann = pickle.load(open("modelo_treinado.sav", 'rb'))
+pickle.dump(model_rg_ann, open("modelo_treinado.sav", 'wb'))
 
 # PREDIÇÃO
 y_test_pred_rg_ann = model_rg_ann.predict(X_test_scl)

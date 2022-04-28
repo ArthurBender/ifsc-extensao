@@ -72,7 +72,7 @@ if os.path.exists('exames2019Total.csv'):
                         , alpha=0.1, random_state=10)
     model_rg_ann = rg_ann.fit(X_train_scl, y_train)
 
-    pickle.dump(model_rg_ann, open("modelo_treinado.sav", 'wb'))
+    pickle.dump(model_rg_ann, open("app/modelo_treinado.sav", 'wb'))
 
     y_test_pred_rg_ann = model_rg_ann.predict(X_test_scl)
 

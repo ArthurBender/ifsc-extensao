@@ -1,2 +1,99 @@
-<h1>Consulta</h1>
-<a href="/resultado">Resultado</a>
+    <nav class="navbar navbar-expand-lg navbar-light py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/static/assets/logo.png" alt="logo" height="75px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link smooth-link" link-destination="analise" href="#analise">A Análise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Realizar Análise</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="form-container">
+            <form action="/resuiltado" method="get">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="idade" class="form-label">Idade:</label>
+                        <input type="text" class="form-control" id="idade" name="idade" required/>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="creat_sangue" class="form-label">Creatina:</label>
+                        <input type="text" class="form-control" id="creat_sangue" name="creat_sangue" required/>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="glic_sangue" class="form-label">Glicose:</label>
+                        <input type="text" class="form-control" id="glic_sangue" name="glic_sangue" required/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="hemo_baso" class="form-label">Hemograma Baso:</label>
+                        <input type="text" class="form-control" id="hemo_baso" name="hemo_baso" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_chcm" class="form-label">Hemograma CHCM:</label>
+                        <input type="text" class="form-control" id="hemo_chcm"  name="hemo_chcm" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_hcm" class="form-label">Hemograma HCM:</label>
+                        <input type="text" class="form-control" id="hemo_hcm" name="hemo_hcm" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_ht" class="form-label">Hemograma HT:</label>
+                        <input type="text" class="form-control" id="hemo_ht" name="hemo_ht" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_leuc" class="form-label">Hemograma LEUC:</label>
+                        <input type="text" class="form-control" id="hemo_leuc" name="hemo_leuc" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_linf" class="form-label">Hemograma LINFO:</label>
+                        <input type="text" class="form-control" id="hemo_linf" name="hemo_linf" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_mono" class="form-label">Hemograma MONO:</label>
+                        <input type="text" class="form-control" id="hemo_mono" name="hemo_mono" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_mpv" class="form-label">Hemograma MPV:</label>
+                        <input type="text" class="form-control" id="hemo_mpv" name="hemo_mpv" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_plaq" class="form-label">Hemograma PLAQ:</label>
+                        <input type="text" class="form-control" id="hemo_plaq" name="hemo_plaq" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_rdw" class="form-label">Hemograma RDW:</label>
+                        <input type="text" class="form-control" id="hemo_rdw" name="hemo_rdw" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_seg" class="form-label">Hemograma SEG:</label>
+                        <input type="text" class="form-control" id="hemo_seg" name="hemo_seg" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hemo_vcm" class="form-label">Hemograma VCM:</label>
+                        <input type="text" class="form-control" id="hemo_vcm" name="hemo_vcm" required/>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <button class="btn btn-primary">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>

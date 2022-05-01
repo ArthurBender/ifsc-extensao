@@ -12,4 +12,4 @@ Alunos: Ana Bárbara Cacheado Seabra, Ariadne Branco Pereira, Arthur Bender, Dhu
 pip install pandas scipy matplotlib sklearn keras tensorflow seaborn
 
 ### Execução
-python modelo_glauco.py
+python wsgi.py

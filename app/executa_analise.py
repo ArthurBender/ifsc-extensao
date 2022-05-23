@@ -26,11 +26,12 @@ def analise(idade, creat_sangue, glic_sangue, hemo_baso, hemo_chcm, hemo_hcm, he
 
     df_predict = pd.DataFrame(data=df_predict_data)
 
-    df_predict_scl = scaler.fit_transform(df_predict)
+    df_predict_scl = scaler.fit_transform(df_predict.values.reshape(15,1))
 
     trained_model = pickle.load(open("app/modelo_treinado.sav", 'rb'))
 
-    predict_result = trained_model.predict(df_predict_scl)
+    predict_result = trained_model.predict(df_predict_scl.reshape(1, 15))
+
 
     return predict_result[0]
 

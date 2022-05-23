@@ -82,13 +82,19 @@ footer, .main-page-section {
     margin-bottom: 0px;
 }
 
-.hemo-result {
-    font-weight: bold;
+.result-container #table-result * {
+    font-size: 18px;
+    border-color: black !important;
 }
 
-.diab-result {
+.result-container #table-result {
+    min-width: 400px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hemo-result {
     font-weight: bold;
-    font-size: 40px;
 }
 
 .section-container {

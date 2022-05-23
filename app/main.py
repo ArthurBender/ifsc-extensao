@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from app.executa_analise import analise, classifica
+from app.executa_analise import analise
 
 app = Flask(__name__)
  
@@ -57,10 +57,8 @@ def resultado():
         hemo_vcm = request.args.get("hemo_vcm")
         )
 
-        resultado, text_class = classifica(hemo_glic)
-
         codigo_pagina  = render_template("html_basic.html", custom_css="resultado")
-        codigo_pagina += render_template("resultado.html", hemo_glic=round(hemo_glic, 2), resultado=resultado, text_class=text_class)
+        codigo_pagina += render_template("resultado.html", hemo_glic=round(hemo_glic, 2))
         codigo_pagina += render_template("footer.html")
         
         return codigo_pagina

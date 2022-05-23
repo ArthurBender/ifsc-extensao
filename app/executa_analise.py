@@ -34,11 +34,3 @@ def analise(idade, creat_sangue, glic_sangue, hemo_baso, hemo_chcm, hemo_hcm, he
 
 
     return predict_result[0]
-
-def classifica(hemo_glic):
-    if hemo_glic < 5.7:
-        return "Saudável", "text-success"
-    elif hemo_glic < 6.5:
-        return "Pré-diabético", "text-warning"
-    else:
-        return "Diabético", "text-danger"
